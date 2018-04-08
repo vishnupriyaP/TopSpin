@@ -1,0 +1,115 @@
+﻿@model IEnumerable<TopSpin2.Models.Match>
+
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2> Match Schedule </h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", "Match")
+    @using (Html.BeginForm())
+    {
+    <p>
+        Country: @Html.TextBox("SearchString") <br />
+        <input type="submit" value="Filter" />
+    </p>
+    }
+    </p>
+
+    <table class="table">
+        <tr>            
+            <th>
+                @Html.DisplayNameFor(model => model.Event.Tournament)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event.Country)
+            </th>
+
+=            <th>
+                @Html.DisplayNameFor(model => model.Player1.PlayerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player2.PlayerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SetOne1) 
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SetOne2)     
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SetTwo1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SetTwo2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SetThree1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SetThree2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Winner.PlayerName)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Event.Tournament)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Event.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Event.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Event.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Player1.PlayerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Player2.PlayerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SetOne1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SetOne2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SetTwo1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SetTwo2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SetThree1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SetThree2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Winner.PlayerName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.MatchID }) |
+                    @Html.ActionLink("Details", "Details", "MatchPlayer", new { id = item.MatchID }, null) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MatchID })
+                </td>
+            </tr>
+        }
+    </table>

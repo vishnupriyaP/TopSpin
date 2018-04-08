@@ -1,0 +1,157 @@
+﻿@model TopSpin2.MatchPlayerVM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2> Details: @Html.DisplayFor(modelItem => Model.matchFound.Event.Tournament) </h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+<table>
+    <text>Event Info</text>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.matchFound.Event.City)
+        </th>
+
+        <td>
+            @Html.DisplayFor(modelItem => Model.matchFound.Event.City)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.matchFound.Event.Country)
+        </th>
+
+        <td>
+            @Html.DisplayFor(modelItem => Model.matchFound.Event.Country)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.matchFound.Event.Date)
+        </th>
+
+        <td>
+            @Html.DisplayFor(modelItem => Model.matchFound.Event.Date)
+        </td>
+   </tr>
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.matchFound.Player1.PlayerName)
+        </th>
+    
+        <td>
+            @Html.DisplayFor(modelItem => Model.matchFound.Player1.PlayerName)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.matchFound.Player1.Country)
+        </th>
+
+        <td>
+            @Html.DisplayFor(modelItem => Model.matchFound.Player1.Country)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.matchFound.Player1.Age)
+        </th>
+
+        <td>
+            @Html.DisplayFor(modelItem => Model.matchFound.Player1.Age)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.matchFound.Player2.PlayerName)
+        </th>
+
+        <td>
+            @Html.DisplayFor(modelItem => Model.matchFound.Player2.PlayerName)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.matchFound.Player2.Country)
+        </th>
+
+        <td>
+            @Html.DisplayFor(modelItem => Model.matchFound.Player2.Country)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.matchFound.Player2.Age)
+        </th>
+
+        <td>
+            @Html.DisplayFor(modelItem => Model.matchFound.Player2.Age)
+
+        </td>
+   </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.matchFound.SetOne1)
+        </th>
+
+        <td>
+            @Html.DisplayFor(modelItem => Model.matchFound.SetOne1)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.matchFound.SetOne2)
+        </th>
+
+        <td>
+            @Html.DisplayFor(modelItem => Model.matchFound.SetOne2)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.matchFound.SetTwo1)
+        </th>
+   
+        <td>
+            @Html.DisplayFor(modelItem => Model.matchFound.SetTwo1)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.matchFound.SetTwo2)
+        </th>
+
+        <td>
+            @Html.DisplayFor(modelItem => Model.matchFound.SetTwo2)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.matchFound.SetThree1)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => Model.matchFound.SetThree1)
+        </td>
+    </tr>
+    
+        <th>
+            @Html.DisplayNameFor(model => model.matchFound.SetThree2)
+        </th>
+
+        <td>
+            @Html.DisplayFor(modelItem => Model.matchFound.SetThree2)
+        </td>
+
+    </tr>
+
+</table>
+<p>
+    @Html.ActionLink("Back to List", "Index", "Match")
+</p>

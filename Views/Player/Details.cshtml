@@ -1,0 +1,82 @@
+﻿@model IEnumerable<TopSpin2.Models.Match>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Upcoming / Past Matches</h2>
+
+
+
+
+<table class="table">
+    <tr>
+        <th>
+        @Html.DisplayNameFor(model => model.Player1.PlayerName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Player2.PlayerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Event.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Event.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Event.Tournament)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Event.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Winner.PlayerName)
+        </th>
+        
+
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{    <tr>
+
+         <td>
+             @Html.DisplayFor(modelItem => item.Player1.PlayerName)
+         </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Player2.PlayerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Event.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Event.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Event.Tournament)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Event.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Winner.PlayerName)
+        </td>
+       
+        
+    
+    </tr>
+}
+
+</table>
+    
+
+
+
+
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

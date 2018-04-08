@@ -1,0 +1,88 @@
+﻿@model IEnumerable<TopSpin2.Models.Player>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>ATP Singles Rankings</h2>
+
+<p>
+    @Html.ActionLink("Add New Player", "Create", "CreatePlayer")
+    @using (Html.BeginForm())
+    {
+    <p>
+        PLayer Name: @Html.TextBox("SearchString") <br />
+        <input type="submit" value="Filter" />
+    </p>
+
+    <p>
+        Country: @Html.TextBox("SearchString2") <br />
+        <input type="submit" value="Filter" />
+    </p>
+    }
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PlayerName)
+        </th>
+       
+
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Height)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.ATPPoints)
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FilePath)
+
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlayerName)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Height)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.ATPPoints)
+        </td>
+        <td>
+            <img src=" @Url.Action("GetPhoto", "Player", new { id =  item.PlayerID })" width="100" height="100" alt = "Image Error" />
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "EditP", new { id = item.PlayerID }) |
+            @Html.ActionLink("Past / Upcoming Matches", "Details", new { id = item.PlayerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.PlayerID })
+        </td>
+    </tr>
+}
+</table>
